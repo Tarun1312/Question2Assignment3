@@ -1,0 +1,12 @@
+<contact>
+    <email>info@meownblog.com</email>
+    <mailing_address>
+        <street>123 Meown Street</street>
+        <city>Catville</city>
+        <state>CA</state>
+        <zip>12345</zip>
+    </mailing_address>
+    <phone>+1 (555) 123-4567</phone>
+    <location>John pet takecare</location>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d39082.01268120497!2d-113.8286937!3d52.2501803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1712880080652!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</contact>

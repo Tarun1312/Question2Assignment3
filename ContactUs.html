@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Meown Blog</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ContactUs.css"> 
+</head>
+<body>
+    <header>
+        <h1><strong>Contact Us</strong></h1>
+        <nav>
+            <ul>
+                <li class="un"><a href="BlogPage.html">Blog Page</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="main-content">
+            <h2>Email Address:</h2>
+            <p>info@meownblog.com</p>
+
+            <h2>Mailing Address:</h2>
+            <p>Meown Blog<br>
+            123 Meown Street<br>
+            Catville, CA 12345</p>
+
+            <h2>Phone Number:</h2>
+            <p>+1 (555) 123-4567</p>
+
+            <h2>Visit us at:</h2>
+            <p>John pet takecare</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d39082.01268120497!2d-113.8286937!3d52.2501803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1712880080652!5m2!1sen!2sca" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Pet Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    
+
+    
+    <script>
+        $(document).ready(function() {
+            // Handle BACK button click
+            $("#backButton").click(function() {
+                window.history.back();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "data.xml",
+                dataType: "xml",
+                success: function(xml) {
+                    $(xml).find('contact').each(function() {
+                        var email = $(this).find('email').text();
+                        var street = $(this).find('street').text();
+                        var city = $(this).find('city').text();
+                        var state = $(this).find('state').text();
+                        var zip = $(this).find('zip').text();
+                        var phone = $(this).find('phone').text();
+                        var location = $(this).find('location').text();
+                        
+                       
+                        $('#street').text(street);
+                        $('#city').text(city);
+                        $('#state').text(state);
+                        $('#zip').text(zip);
+                        $('#phone').text(phone);
+                        $('#location').text(location);
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- Script for json -->
+    <script object="data.json"></script>
+<script>
+    $(document).ready(function() {
+        $.getJSON('data.json', function(data) {
+            $('#email').text(data.email);
+            $('#street').text(data.mailing_address.street);
+            $('#city').text(data.mailing_address.city);
+            $('#state').text(data.mailing_address.state);
+            $('#zip').text(data.mailing_address.zip);
+            $('#phone').text(data.phone);
+            $('#location').text(data.location);
+        });
+    });
+</script>
+</body>
+</html>
